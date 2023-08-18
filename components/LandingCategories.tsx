@@ -24,8 +24,8 @@ const LandingCategories = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12">
         {Categories.map((cat) => (
           <Card key={cat.name} 
-            className="bg-transparent relative text-white w-[320px] h-[280px]">
-            <CardContent className="w-full h-full hover:opacity-70 
+            className="bg-transparent relative text-white w-[320px] h-[280px] hover:opacity-70 ">
+            <CardContent className="w-full h-full
                 pt-4 z-10 flex justify-center cursor-pointer ">
                 <Image src={cat.image} alt="cat image" 
                 className="object-cover" fill/>

@@ -1,7 +1,10 @@
+'use client'
 import { cn } from "@/lib/utils"
 import { Urbanist } from "next/font/google"
 import Image from "next/image"
 import { Button } from "./ui/button"
+import Link from "next/link"
+import {useAuth} from '@clerk/nextjs'
 
 
 const font = Urbanist({
@@ -10,6 +13,9 @@ const font = Urbanist({
 })
 
 const LandingHero = () => {
+
+  const { isSignedIn } = useAuth();
+
   return (
     <div className="h-[500px] relative">
       <div className="w-full">
@@ -35,9 +41,11 @@ const LandingHero = () => {
             Simplify life for your users
             <br /> using our membership system
          </p>
-         <Button variant='premium' className="text-xl font-italic p-4 md:p-6 ">
-          Join Now
-         </Button>
+         <Link href={isSignedIn ? '/dashboard' : '/sign-in'}>
+          <Button variant='premium' className="text-xl font-italic p-4 md:p-6 ">
+            Join Now
+          </Button>
+         </Link>
       </div>
     </div>
   )

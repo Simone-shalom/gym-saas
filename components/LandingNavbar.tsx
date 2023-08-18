@@ -5,6 +5,7 @@ import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import {useAuth} from '@clerk/nextjs'
 
 const font = Montserrat({
     weight: '600',
@@ -13,6 +14,9 @@ const font = Montserrat({
 
 
 const LandingNavbar = () => {
+
+  const {isSignedIn} = useAuth()
+
   return (
     <nav className="flex z-40 lg:mx-20 m-4 justify-between items-center">
         <Link href='/' className="flex items-center">
@@ -26,7 +30,8 @@ const LandingNavbar = () => {
           </h1>
         </Link>
 
-        <Link href='/sign-up' className="flex items-center">
+        <Link href={isSignedIn ? '/dashboard' : '/sign-up'} 
+          className="flex items-center">
             <Button variant='secondary' 
                 className="hover:scale-105 hover:opacity-80">
                 Get Started
