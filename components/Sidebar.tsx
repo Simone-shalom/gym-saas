@@ -1,6 +1,6 @@
 'use client'
 import { cn } from "@/lib/utils"
-import { TrainIcon, QrCode, Settings, LayoutDashboard } from "lucide-react"
+import { Dumbbell, QrCode, Settings, LayoutDashboard } from "lucide-react"
 import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
@@ -27,14 +27,14 @@ const routes =[
   },
   {
     label: 'Virtual Trainer',
-    icon: TrainIcon,
+    icon: Dumbbell,
     href: '/trainer',
     color: 'text-sky-500'
   },
   {
     label: 'Settings',
     icon: Settings,
-    href: '/trainer',
+    href: '/settings',
     color: 'text-gray-500'
   },
   
