@@ -16,6 +16,7 @@ import { UserAvatar } from "@/components/UserAvatar"
 import { BotAvatar } from "@/components/BotAvatar"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import Loader from "@/components/Loader"
 
 
 const TrainerPage = () => {
@@ -29,6 +30,8 @@ const TrainerPage = () => {
       prompt: "",
     },
   })
+
+  const isLoading = form.formState.isSubmitting
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     //make api call on submit
@@ -45,7 +48,6 @@ const TrainerPage = () => {
       })
 
       setMessags((current) => [...current, userMessage, response.data])
-      console.log(messages)
 
       form.reset()
 
@@ -56,7 +58,6 @@ const TrainerPage = () => {
     }
   }
 
-  const isLoading = form.formState.isLoading
 
   return (
     <div>
@@ -90,8 +91,15 @@ const TrainerPage = () => {
           </div>
 
           {/*Messages send and received from AI*/}
-          <div className="space-y-4">
-            {messages.length === 0&& !isLoading&& (
+          <div className="space-y-4 text-center">
+          {isLoading && (
+              <div className='p-8 rounded-lg h-[200px] w-full flex flex-col items-center
+              justify-center bg-muted'>
+                <Loader />
+                <p className="text-mono text-lg"> Your Trainer is thinking...</p>
+              </div>
+            )}
+            {messages.length === 0 && (
               <div className="w-full h-[300px] rounded-md p-3 flex flex-col
                items-center justify-center pt-40">
                 <Image src='/images/arnold.png' alt="arnold photo" 
