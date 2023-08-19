@@ -50,8 +50,9 @@ const DashboardPage = () => {
       <h2 className="text-3xl md:text-4xl font-italic text-center">
         Welcome {user?.firstName}
       </h2>
-      <p className="text-muted-foreground text-center text-sm md:text-lg">
-        Check our new Virtual trainer or get access using qr code
+      <p className="text-muted-foreground text-center text-sm md:text-lg md:px-10">
+        Check our new Virtual trainer or get access to your gym anywhere,
+         anytime using qr code
       </p>
     </div>
     <div className="px-4 md:px-12 lg:px-32 space-y-4 flex flex-col items-center ">
@@ -61,7 +62,7 @@ const DashboardPage = () => {
         className='p-4 border-black/5 flex items-center justify-between
         hover:shadow-xl transition cursor-pointer w-full '>
           <div className='flex items-center gap-x-1'>
-            <div className={cn('p-2 rounded-md w-[180px] h-[200px] flex items-center')}>
+            <div className={cn('p-2 rounded-md w-[180px] h-[180px] flex items-center')}>
               <Image src={tool.image} width={140} height={100} alt='Tool image'
                 className='rounded-md object-cover'/>
             </div>
