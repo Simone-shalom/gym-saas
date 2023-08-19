@@ -19,7 +19,7 @@ const LandingHero = () => {
   return (
     <div className="h-[500px] relative">
       <div className="w-full">
-        <Image src='/images/hero-gym.webp' alt="hero Image" fill
+        <Image src='/images/gymhero.jpg' alt="hero Image" fill
             className="object-cover"/>
       </div>
       <div className="absolute top-[0%] h-[100px] w-full bg-gradient-to-b

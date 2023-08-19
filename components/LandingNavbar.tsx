@@ -26,7 +26,7 @@ const LandingNavbar = () => {
           </div>
           <h1 className={cn('text-2xl lg:text-3xl font-semibold',
             font.className)}>
-            YourGym
+            Gymify
           </h1>
         </Link>
 
