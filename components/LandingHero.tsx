@@ -42,7 +42,7 @@ const LandingHero = () => {
             <br /> using our membership system
          </p>
          <Link href={isSignedIn ? '/dashboard' : '/sign-in'}>
-          <Button variant='premium' className="text-xl font-italic p-4 md:p-6 ">
+          <Button variant='premium'  className="text-xl font-italic p-4 md:p-6 ">
             Join Now
           </Button>
          </Link>

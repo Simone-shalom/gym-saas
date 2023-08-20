@@ -1,10 +1,12 @@
 'use client'
 import { cn } from "@/lib/utils"
+import { UserApiLimit } from "@prisma/client"
 import { Dumbbell, QrCode, Settings, LayoutDashboard } from "lucide-react"
 import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from 'next/navigation'
+import { FreeCounter } from "./FreeCounter"
 
 
 const montse = Montserrat({
@@ -40,7 +42,11 @@ const routes =[
   
 ]
 
-const Sidebar = () => {
+interface SidebarProps {
+  apiLimitCount:number
+}
+
+const Sidebar = ({apiLimitCount}:SidebarProps) => {
 
   const pathName = usePathname()
 
@@ -69,6 +75,9 @@ const Sidebar = () => {
                 </Link>
             ))}
         </div>
+    </div>
+    <div className="flex justify-center">
+      <FreeCounter apiLimitCount={apiLimitCount}/>
     </div>
 </div>
   )

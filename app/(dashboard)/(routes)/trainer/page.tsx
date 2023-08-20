@@ -24,6 +24,7 @@ const TrainerPage = () => {
   const [messages, setMessags] = useState<ChatCompletionRequestMessage[]>([])
   const router = useRouter()
 
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -82,7 +83,7 @@ const TrainerPage = () => {
                    </FormControl>
                   </FormItem>
                 )}/>
-                <Button variant='premium' type="submit" disabled={isLoading}
+                <Button variant='pro' type="submit" disabled={isLoading}
                   className="lg:w-40">
                   Ask
                 </Button>
