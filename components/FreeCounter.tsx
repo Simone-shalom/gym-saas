@@ -36,7 +36,8 @@ export const FreeCounter = ({apiLimitCount}: FreeCounterProps) => {
                 <Progress value={apiLimitCount/ MAX_FREE_COUNT *100} 
                     className="rounded-none h-4"/>
             </div>
-            <Button variant='pro' className="w-full">
+            <Button variant='pro' className="w-full"
+              onClick={proModal.onOpen}>
                 Became a Pro
                 <Zap className='w-4 h-4 ml-2 fill-white'/>
             </Button>

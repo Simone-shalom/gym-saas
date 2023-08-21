@@ -17,13 +17,14 @@ import { BotAvatar } from "@/components/BotAvatar"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Loader from "@/components/Loader"
+import { useProModal } from "@/hooks/use-pro-modal"
 
 
 const TrainerPage = () => {
 
   const [messages, setMessags] = useState<ChatCompletionRequestMessage[]>([])
   const router = useRouter()
-
+  const proModal = useProModal()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -52,7 +53,10 @@ const TrainerPage = () => {
 
       form.reset()
 
-    }catch(error) {
+    }catch(error: any) {
+      if(error?.response?.status === 403 ){
+        proModal.onOpen()
+      }
       console.log(error)
     }finally{
       router.refresh()

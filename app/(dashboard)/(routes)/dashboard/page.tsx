@@ -10,15 +10,6 @@ import { useRouter } from "next/navigation"
 
 const tools = [
   {
-    label: 'Access code',
-    icon: QrCode,
-    href: '/code',
-    color: 'text-green-500',
-    bgColor: 'bg-green-500',
-    image: '/images/codeqr.png',
-    desc: 'Get access code to your favorite gym'
-  },
-  {
     label: 'Virtual Trainer',
     icon: Dumbbell,
     href: '/trainer',
@@ -26,6 +17,15 @@ const tools = [
     bgColor: 'bg-sky-500',
     image: '/images/arnold.png',
     desc: 'Ask our virtual trainer modal your questions'
+  },
+  {
+    label: 'Access code',
+    icon: QrCode,
+    href: '/code',
+    color: 'text-green-500',
+    bgColor: 'bg-green-500',
+    image: '/images/codeqr.png',
+    desc: 'Get access code to your favorite gym'
   },
   {
     label: 'Settings',

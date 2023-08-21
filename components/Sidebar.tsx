@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from 'next/navigation'
 import { FreeCounter } from "./FreeCounter"
+import { useProModal } from "@/hooks/use-pro-modal"
 
 
 const montse = Montserrat({
@@ -21,17 +22,17 @@ const routes =[
     href: '/dashboard',
     color: 'text-purple-500'
 },
+{
+  label: 'Virtual Trainer',
+  icon: Dumbbell,
+  href: '/trainer',
+  color: 'text-sky-500'
+},
   {
     label: 'Access code',
     icon: QrCode,
     href: '/code',
     color: 'text-green-500'
-  },
-  {
-    label: 'Virtual Trainer',
-    icon: Dumbbell,
-    href: '/trainer',
-    color: 'text-sky-500'
   },
   {
     label: 'Settings',
