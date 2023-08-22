@@ -10,9 +10,10 @@ import { Zap } from "lucide-react";
 
 interface FreeCounterProps {
     apiLimitCount: number;
+    isPro: boolean;
 }
 
-export const FreeCounter = ({apiLimitCount}: FreeCounterProps) => {
+export const FreeCounter = ({apiLimitCount, isPro}: FreeCounterProps) => {
 
     const proModal =useProModal()
     const [mounted, setMounted] =useState(false)
@@ -37,8 +38,8 @@ export const FreeCounter = ({apiLimitCount}: FreeCounterProps) => {
                     className="rounded-none h-4"/>
             </div>
             <Button variant='pro' className="w-full"
-              onClick={proModal.onOpen}>
-                Became a Pro
+              onClick={proModal.onOpen} disabled={isPro}>
+               {isPro ? 'You are Pro': 'Upgrade'}
                 <Zap className='w-4 h-4 ml-2 fill-white'/>
             </Button>
         </CardContent>

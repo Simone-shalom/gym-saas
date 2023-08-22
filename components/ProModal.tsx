@@ -5,10 +5,12 @@ import axios from "axios"
 import { Check, Dumbbell, QrCode, Zap } from "lucide-react"
 import { useState } from "react"
 import { toast } from "react-hot-toast"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, 
+  DialogHeader, DialogTitle } from "./ui/dialog"
 import { Card } from "./ui/card"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
+
 
 const tools =[
   {
@@ -30,7 +32,6 @@ export const ProModal = () => {
 
     const proModal = useProModal()
     const [loading, setLoading] = useState(false)
-
 
     const onSubscribe = async() => {
 
@@ -82,7 +83,7 @@ export const ProModal = () => {
                 onClick={onSubscribe}
                 size='lg' variant='pro' className='w-full'
                 disabled={loading}>
-                Upgrade
+                  Upgrade
                 <Zap className='w-4 h-3 ml-2 fill-white'/>
               </Button>
             </DialogFooter>

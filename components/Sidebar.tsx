@@ -1,13 +1,11 @@
 'use client'
 import { cn } from "@/lib/utils"
-import { UserApiLimit } from "@prisma/client"
 import { Dumbbell, QrCode, Settings, LayoutDashboard } from "lucide-react"
 import { Montserrat } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from 'next/navigation'
 import { FreeCounter } from "./FreeCounter"
-import { useProModal } from "@/hooks/use-pro-modal"
 
 
 const montse = Montserrat({
@@ -45,9 +43,10 @@ const routes =[
 
 interface SidebarProps {
   apiLimitCount:number
+  isPro: boolean
 }
 
-const Sidebar = ({apiLimitCount}:SidebarProps) => {
+const Sidebar = ({apiLimitCount ,isPro}:SidebarProps) => {
 
   const pathName = usePathname()
 
@@ -78,7 +77,7 @@ const Sidebar = ({apiLimitCount}:SidebarProps) => {
         </div>
     </div>
     <div className="flex justify-center">
-      <FreeCounter apiLimitCount={apiLimitCount}/>
+      <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro}/>
     </div>
 </div>
   )
