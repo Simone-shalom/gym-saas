@@ -4,12 +4,13 @@ import MobileSidebar from "./MobileSidebar"
 
 interface NavbarProps {
   apiLimitCount: number
+  isPro: boolean
 }
 
-const Navbar = ({apiLimitCount}:NavbarProps) => {
+const Navbar = ({apiLimitCount, isPro}:NavbarProps) => {
   return (
     <div className="p-4 flex items-center">
-      <MobileSidebar apiLimitCount={apiLimitCount}/>
+      <MobileSidebar apiLimitCount={apiLimitCount} isPro={isPro}/>
       <div className="ml-auto">
         <UserButton afterSignOutUrl="/"/>
       </div>
