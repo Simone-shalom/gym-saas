@@ -19,7 +19,7 @@ const Heading = ({title, desc, icon:Icon, iconColor,bgColor }:
         <Icon className={cn('w-10 h-10', iconColor)}/>
       </div>
       <div>
-       <h2 className='text-3xl font-bold'>
+       <h2 className='text-3xl lg:text-4xl font-bold'>
          {title}
        </h2>
        <p className='text-sm text-muted-foreground'>

@@ -1,11 +1,13 @@
 'use client'
 
+import Heading from "@/components/Heading"
 import { Button } from "@/components/ui/button"
-import { useAuth } from "@clerk/nextjs"
+import { Card } from "@/components/ui/card"
+import { useAuth, useUser } from "@clerk/nextjs"
 import axios from "axios"
+import { PartyPopper, QrCode } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import QRCode from 'qrcode'
 import { useState } from "react"
 import { toast } from "react-hot-toast"
 
@@ -14,6 +16,7 @@ const CodePage = () => {
   const [src, setSrc] = useState('')
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const {user} = useUser()
 
   
   const Generate = async()  => {
@@ -38,16 +41,37 @@ const CodePage = () => {
 
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center px-20">
+      <Heading title="Access code" desc="Generate your access code here"
+        icon={QrCode} iconColor="text-green-500" bgColor="bg-green-100"/>
        {src ? (
-        <div>Your access code</div>
+        <p className="text-lg italic mt-6">Your access code    
+          <span className="text-muted-foreground ">  {user?.fullName} </span>
+          </p>
        ) :
-        <Button onClick={Generate} disabled={loading}>
+        <Button onClick={Generate} disabled={loading} className="mt-6">
           Show Qr Your Qr Code
         </Button> }
       {src && (
-          <div>
-          <Image src={src} alt='Qr Code' width={200} height={200}/>
+        <div className="shadow-xl p-2 rounded-xl mt-2 opacity-80 hover:opacity-100
+          cursor-pointer group flex flex-col items-center justify-center">
+            <Image src={src} alt='Qr Code' width={300} height={300} 
+              className="flex lg:hidden"/>
+              <Image src={src} alt='Qr Code' width={400} height={400} 
+              className="hidden lg:flex"/>
+            <div className="fixed top-[560px] lg:top-[700px]
+              hidden group-hover:flex flex-col space-x-3">
+                <div className="flex items-center justify-center space-x-2">
+                  <p className="text-italic text-lg text-purple-800">
+                    Scan the Code
+                  </p>
+                  <PartyPopper size={20}color="purple" 
+                    className="transition animate-pulse duration-1000"/>
+                </div>
+              <p className="text-muted-foreground italic text-sm">
+              Thank You for using my app @Simone</p>
+            </div>
+           
         </div>
       )}
     </div>
