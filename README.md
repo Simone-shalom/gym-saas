@@ -22,6 +22,10 @@ FEAUTRES:
 ACCESS:
 Email address- admin@gmail.com
 Password - admin1234
+Stripe test mode : 
+  credit card-4242 4242 4242 4242
+  month -2/24  cvc -424
+  name -admin
 
 ABOUT: 
 Sass project for gym companies using latest techonologies. Handles authentication, user subscription, data.
