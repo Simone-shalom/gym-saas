@@ -1,33 +1,47 @@
 ## GYM SAAS PROJECT - Virtual Trainer and Access Code functionality, using- NEXTJS-13, REACT, TAILWIND, PRISMA, STRIPE
 
-<img width="949" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/10376db7-3d7d-470c-9d74-e139e150c939">
+<img width="915" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/0e8263b2-0efe-4a82-a92c-2b492fca9d9a">
 
-FEAUTRES: 
-- Tailwind design
-- Full Responsivness
-- Clerk Authentication
-- Client form validation and handling using react-hook-form
-- Virtual Trainer openai generation tool
-- Access code using qrcode/react
-- Stripe Subscriptions
-- Free trial using Api Limiting functions
-- Prisma as ORM for mongodb database
-- Routing for Posting and Getting data
-- Server/ Client relations with children
-- Fetching data with server components- directly from databse(actions)
-- Loading States 
-- Server error handling using react-toast
-- Shadcn components library
 
-ACCESS:
-Email address- admin@gmail.com
-Password - admin1234
-Stripe test mode : 
+## Introduction
+### Modern saas for gym companies
+
+## Tech Stack: 
+### - Next.js – framework
+### - Typescript – language
+### - Tailwind – CSS
+### - Mongodb, Prisma – database
+### - Clerk – auth
+### - Vercel – hosting
+### - AI- OpenAi
+###- Subscriptions - Stripe
+
+### Virtual Trainer
+<img width="795" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/c20b3d2f-f297-46d4-b5b3-fe6a0c7366d9">
+
+
+### QR Code generation based on userId
+<img width="575" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/1621f638-5387-42f2-b1da-02577ee84ab5">
+
+
+## Implementation:
+### - Authentication using Clerk
+### - Handling subscriptions
+### - Prisma as Orm
+### - Responsive design 
+### - OpenAi chat
+### - Qr code generation
+
+
+## ACCESS:
+### Email address- admin@gmail.com
+### Password - admin1234
+### Stripe test mode : 
   credit card-4242 4242 4242 4242
   month -2/24  cvc -424
   name -admin
 
-ABOUT: 
+## ABOUT: 
 Sass project for gym companies using latest techonologies. Handles authentication, user subscription, data.
 Gives access to virtual trainer and qr code which can be implemented into client(gym) database and gives information about user
 when he is sqanning the code. Has Free trial for users. Inspired by CodeWithAntonio-amazing mentor
