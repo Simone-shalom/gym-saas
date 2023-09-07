@@ -24,6 +24,12 @@
 <img width="575" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/1621f638-5387-42f2-b1da-02577ee84ab5">
 
 
+### Subscriptions using Stripe
+<img width="651" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/49c1c7ce-72b5-4800-8d5e-ef89fe01af64">
+
+
+
+
 ## Implementation:
 ### - Authentication using Clerk
 ### - Handling subscriptions
