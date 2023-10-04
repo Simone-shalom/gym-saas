@@ -11,14 +11,6 @@ datasource db {
   relationMode = "prisma"
 }
 
-model UserApiLimit {
-  id String @id @default(uuid()) @map("_id")
-  userId String @unique
-  count Int @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model UserSubscription {
   id String @id @default(uuid()) @map("_id")
   userId String @unique

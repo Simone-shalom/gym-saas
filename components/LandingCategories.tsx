@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Card, CardContent} from "./ui/card"
 
-const Categories = [
+export const Categories = [
     {
         name: "Virtual Trainer",
         desc: 'Ask our Ai trainer for your questions',

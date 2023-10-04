@@ -1,7 +1,6 @@
 'use client'
 import Heading from "@/components/Heading"
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form"
-import{Dumbbell} from 'lucide-react'
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -67,7 +66,7 @@ const TrainerPage = () => {
   return (
     <div>
       <Heading title="Virtual Trainer" desc="Advanced AI fitness coach"
-        icon={Dumbbell} iconColor="text-sky-500" bgColor="bg-sky-100"/>
+       />
         {/*AI Generation with openai api button and messages*/}
         <div className="space-y-2 px-4 lg:px-8">
           <div>
@@ -108,7 +107,7 @@ const TrainerPage = () => {
               <div className="w-full h-[300px] rounded-md p-3 flex flex-col
                items-center justify-center pt-40">
                 <Image src='/images/arnold.png' alt="arnold photo" 
-                width={160} height={100} className="object-cover rounded-2xl"/>
+                width={160} height={100} className="object-cover rounded-2xl hover:scale-110 transition duration-500"/>
                 <p className="text-lg font-mono mx-auto text-center pt-10">
                   Ask me anything, im right here - your personal trainer
                 </p>

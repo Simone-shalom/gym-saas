@@ -65,7 +65,7 @@ return() =>{
 
   return (
     <nav className= {`  ${showBackground ? ' md:bg-gradient-to-b from-black to-gray-800' : ''} 
-      md:w-full md:px-4 md:fixed z-50 shadow-md  space-y-4 flex flex-col md:flex-row h-full md:h-auto   bg-black text-white`}>
+      md:w-full md:px-4 md:fixed z-50 shadow-md  space-y-4 flex flex-col md:flex-row h-full md:h-auto   bg-black/95 text-white`}>
       <div className={`flex flex-col md:flex-row items-center gap-8 md:px-5 md:space-x-16 lg:space-x-48 xl:space-x-96   rounded-xl md:justify-between 
         py-3 max-w-7xl md:m-auto transition duration-500 h-24`}>
           <div className="flex items-center justify-center">

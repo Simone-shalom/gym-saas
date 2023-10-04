@@ -53,10 +53,10 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="">
+    <div className="pb-6">
     <div className="mb-8 space-y-4 flex items-center justify-center flex-col">
       <h2 className="text-3xl md:text-4xl font-semibold text-center text-emerald-700">
-        Welcome {user?.firstName}
+        Your dashboard {user?.firstName}
       </h2>
       <Button
           onClick={goToGitHub} 
@@ -70,7 +70,7 @@ const DashboardPage = () => {
       </p>
     </div>
     <LandingCategories />
-    <div className="px-4 md:px-12 lg:px-32 space-y-4 flex flex-col items-center ">
+    <div className="px-4 md:px-12 lg:px-32 space-y-4 flex flex-col items-center pt-5">
       {pages.map((page) => (
         <Card key={page.href}
         onClick={()=> router.push(page.href)}
