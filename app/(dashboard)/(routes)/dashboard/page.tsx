@@ -29,15 +29,6 @@ const pages = [
     image: '/images/codeqr.png',
     desc: 'Get access code to your favorite gym'
   },
-  {
-    label: 'Subscription',
-    icon: Settings,
-    href: '/subscription',
-    color: 'text-gray-500',
-    bgColor: 'bg-gray-500',
-    image: '/images/settings.webp',
-    desc: 'Set your subscription or renew one'
-  },
 ]
 
 
