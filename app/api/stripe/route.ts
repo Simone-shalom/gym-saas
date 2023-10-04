@@ -4,7 +4,7 @@ import prismadb from '@/lib/prismadb'
 import { stripe } from '@/lib/stripe'
 import { absoluteUrl } from '@/lib/utils'
 
-const settingsUrl = absoluteUrl('/settings')
+const subscriptionUrl = absoluteUrl('/subscription')
 
 export async function GET() {
 
@@ -26,14 +26,14 @@ export async function GET() {
         if(userSubscription && userSubscription.stripeCustomerId){
             const stripeSession = await stripe.billingPortal.sessions.create({
                 customer: userSubscription.stripeCustomerId,
-                return_url: settingsUrl
+                return_url: subscriptionUrl
             })
             return new NextResponse(JSON.stringify({url: stripeSession.url}))
         }
         //stripe checkout create session api-reference 
         const stripeSession = await stripe.checkout.sessions.create({
-            success_url: settingsUrl,
-            cancel_url: settingsUrl,
+            success_url: subscriptionUrl,
+            cancel_url: subscriptionUrl,
             payment_method_types: ['card'],
             mode: 'subscription',
             billing_address_collection: 'auto',

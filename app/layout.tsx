@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
-import { CrispProvider } from '@/components/CrispProvider'
+import { CrispProvider } from '@/providers/CrispProvider'
 import { ToasterProvider } from '@/providers/ToasterProvider'
 import { ModalProvider } from '@/providers/ModalProvider'
 

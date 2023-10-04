@@ -3,6 +3,7 @@
 import Heading from "@/components/Heading"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { useProModal } from "@/hooks/use-pro-modal"
 import { useAuth, useUser } from "@clerk/nextjs"
 import axios from "axios"
 import { PartyPopper, QrCode } from "lucide-react"
@@ -17,6 +18,7 @@ const CodePage = () => {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const {user} = useUser()
+  const proModal = useProModal()
 
   
   const Generate = async()  => {
@@ -30,7 +32,11 @@ const CodePage = () => {
       toast.success("Code generated")
 
     }catch(error:any){
-      toast.error('Something went wrong')
+      if(error?.response?.status === 403 ){
+        proModal.onOpen()
+      }else {
+        toast.error('Something went wrong')
+      }
     } finally{
       setLoading(false)
       router.refresh()

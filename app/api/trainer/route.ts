@@ -1,8 +1,7 @@
-import { checkApiLimit } from "@/actions/api-limit"
+
 import { auth } from "@clerk/nextjs"
 import { NextResponse } from "next/server"
 import {ChatCompletionRequestMessage, Configuration, OpenAIApi} from 'openai'
-import { increaseApiLimit } from "@/actions/api-limit"
 import { checkSubscription } from "@/lib/subscription"
 
 const configuration = new Configuration({
@@ -36,12 +35,11 @@ export  async function POST(req: Request) {
             return new NextResponse("Message not found", {status:400})
         }
 
-        const freeTrial =  await checkApiLimit()
 
         const isPro = await checkSubscription()
 
-        if(!freeTrial && !isPro){
-            return new NextResponse("Free trial has expired", {status:403})
+        if(!isPro){
+            return new NextResponse("You have no subscription", {status:403})
         }
 
         const response = await openai.createChatCompletion({
@@ -49,9 +47,7 @@ export  async function POST(req: Request) {
             messages: [instructionMessage, ...messages],
         })
 
-        if(!isPro){
-            await increaseApiLimit()
-        }
+    
 
         return NextResponse.json(response.data.choices[0].message)
 

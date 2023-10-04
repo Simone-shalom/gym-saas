@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { checkApiLimit, increaseApiLimit } from "@/actions/api-limit";
 import { auth } from "@clerk/nextjs";
 import { checkSubscription } from "@/lib/subscription";
 import  QRCode  from "qrcode";
@@ -14,20 +13,16 @@ export async function POST(req: Request, res: Response) {
             return new NextResponse('Unauthorized', {status:401})
         }
 
-        const freeTrial =  await checkApiLimit()
 
         const isPro = await checkSubscription()
 
-        if(!freeTrial && !isPro){
-            return new NextResponse("Free trial has expired", {status:403})
+        if(!isPro){
+            return new NextResponse("You have no subscription", {status:403})
         }
 
         const response = await QRCode.toDataURL(`http://YourDatabase/users/${userId}`)
 
-        if(!isPro){
-            await increaseApiLimit()
-        }
-
+      
         return NextResponse.json(response)
 
     }catch(error :any){
