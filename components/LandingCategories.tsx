@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import { Card, CardContent} from "./ui/card"
 
 const Categories = [
     {
@@ -27,7 +27,7 @@ const LandingCategories = () => {
             className="bg-transparent relative text-white w-[320px] h-[280px] 
               hover:opacity-70 rounded-sm ">
             <CardContent className="w-full h-full
-                pt-4 z-10 flex justify-center cursor-pointer ">
+                pt-4 z-10 flex justify-center ">
                 <Image src={cat.image} alt="cat image" 
                 className="object-cover" fill/>
                  <div className="absolute top-[0%] h-[280px] w-full 

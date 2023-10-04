@@ -66,7 +66,7 @@ return() =>{
   return (
     <nav className= {`  ${showBackground ? ' md:bg-gradient-to-b from-black to-gray-800' : ''} 
       md:w-full md:px-4 md:fixed z-50 shadow-md  space-y-4 flex flex-col md:flex-row h-full md:h-auto   bg-black text-white`}>
-      <div className={`flex flex-col md:flex-row items-center gap-8 md:px-5 md:space-x-24 lg:space-x-48 xl:space-x-96   rounded-xl md:justify-between 
+      <div className={`flex flex-col md:flex-row items-center gap-8 md:px-5 md:space-x-16 lg:space-x-48 xl:space-x-96   rounded-xl md:justify-between 
         py-3 max-w-7xl md:m-auto transition duration-500 h-24`}>
           <div className="flex items-center justify-center">
         <Link href='/dashboard' className='flex'>
@@ -78,14 +78,14 @@ return() =>{
             </h1>
         </Link>
         </div>
-        <div className='space-y-4 md:space-y-0 pt-10 md:pt-0 flex flex-col md:flex-row items-center justify-center'>
+        <div className='space-y-4 md:space-y-0  pt-10 md:pt-0 flex flex-col md:flex-row items-center justify-center'>
             {routes.map((route) => (
                 <Link key={route.href} href={route.href}
                     className={ cn(` font-bold group flex text-center p-3 w-full justify-start
                      cursor-pointer hover:text-white
-                     hover:bg-white/10 transition rounded-lg`,
+                     hover:bg-white/10 transition rounded-lg `,
                       pathName === route.href ? 'text-white bg-white/10': 'text-zinc-400')}>
-                   <div className='flex items-center flex-1'>
+                   <div className='flex items-center flex-1 justify-center w-32'>
                     {route.label}
                     </div> 
                 </Link>

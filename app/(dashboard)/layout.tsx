@@ -10,12 +10,12 @@ const DashboardLayout = async({children}:
       const isPro = await checkSubscription()
 
   return (
-    <div className="h-full relative">
+    <div className="h-full relative ">
       <div className=" hidden md:block
         bg-black">
         <Sidebar  isPro={isPro}/>
       </div>
-      <main className="md:pt-32">
+      <main className="md:pt-28">
         <Navbar  isPro={isPro}/>
         {children}
       </main>
