@@ -45,7 +45,7 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="pb-6">
+    <div>
     <div className="mb-8 space-y-4 flex items-center justify-center flex-col">
       <h2 className="text-3xl md:text-4xl font-semibold text-center text-emerald-700">
         Your dashboard {user?.firstName}

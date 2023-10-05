@@ -64,7 +64,7 @@ const TrainerPage = () => {
 
 
   return (
-    <div>
+    <div className="sm:pb-10 xl:pb-20">
       <Heading title="Virtual Trainer" desc="Advanced AI fitness coach"
        />
         {/*AI Generation with openai api button and messages*/}

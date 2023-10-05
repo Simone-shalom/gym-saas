@@ -7,8 +7,8 @@ export const DashIcons = () => {
   return (
     <div>
         {/* left side */}
-        <div className=" hidden 2xl:block absolute top-[30%] left-10">
-            <Card className="shadow-xl p-5 hover:scale-110 transition duration-1000">
+        <div className=" hidden 2xl:block absolute top-[30%] left-10  animate-bounce">
+            <Card className="shadow-xl p-5 hover:scale-110 transition duration-1000 bg-gradient-to-r from-emerald-100/50 ">
             <h2 className="font-semibold text-xl text-emerald-700 italic text-center">
             Best equipment out there !!!
             </h2>
@@ -22,8 +22,8 @@ export const DashIcons = () => {
             </Card>
         </div>
         {/* Right side */}
-        <div className=" hidden 2xl:block absolute top-[30%] right-10">
-            <Card className="shadow-xl p-5 hover:scale-110 transition duration-1000">
+        <div className=" hidden 2xl:block absolute top-[30%] right-10 animate-bounce">
+            <Card className="shadow-xl p-5 hover:scale-110 transition duration-1000 bg-gradient-to-l from-purple-100/50">
             <h2 className="font-semibold text-xl text-purple-700 italic text-center">
                 We have been open for 5 years
             </h2>

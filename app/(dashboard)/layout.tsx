@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Sidebar from "@/components/Sidebar"
 import { checkSubscription } from "@/lib/subscription"
@@ -19,6 +20,7 @@ const DashboardLayout = async({children}:
         <Navbar  isPro={isPro}/>
         {children}
       </main>
+      <Footer />
     </div>
   )
 }

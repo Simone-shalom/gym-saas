@@ -48,7 +48,7 @@ const CodePage = () => {
 
 
   return (
-    <div className="flex flex-col justify-center items-center px-20">
+    <div className="flex flex-col justify-center items-center px-20 sm:pb-20 xl:pb-32">
       <Heading title="Access code" desc="Generate your access code here"
        />
        {src ? (
@@ -60,7 +60,7 @@ const CodePage = () => {
           Show Qr Your Qr Code
         </Button> }
         {!src && (
-           <div className="pt-5">
+           <div className="pt-8">
            <LandingCategories />
            </div>
         )}
@@ -69,7 +69,7 @@ const CodePage = () => {
           cursor-pointer group flex flex-col items-center justify-center">
             <Image src={src} alt='Qr Code' width={300} height={300} 
               className="flex lg:hidden"/>
-              <Image src={src} alt='Qr Code' width={400} height={400} 
+              <Image src={src} alt='Qr Code' width={360} height={400} 
               className="hidden lg:flex"/>
             <div className="fixed top-[560px] lg:top-[720px]
               hidden group-hover:flex flex-col space-x-3">
