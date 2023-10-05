@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "react-hot-toast"
 import LandingCategories from "@/components/LandingCategories"
+import { DashIcons } from "@/components/DashIcons"
 
 const CodePage = () => {
 
@@ -85,6 +86,7 @@ const CodePage = () => {
            
         </div>
       )}
+      <DashIcons />
     </div>
   )
 }

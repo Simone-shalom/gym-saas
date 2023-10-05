@@ -1,5 +1,6 @@
 'use client'
 
+import { DashIcons } from '@/components/DashIcons'
 import LandingCategories from '@/components/LandingCategories'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -87,6 +88,7 @@ const DashboardPage = () => {
       </Card>
       ))}
     </div>
+    <DashIcons />
    </div>
   )
 }
