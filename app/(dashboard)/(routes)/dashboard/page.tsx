@@ -47,10 +47,10 @@ const DashboardPage = () => {
   return (
     <div>
     <div className="mb-8 space-y-4 flex items-center justify-center flex-col">
-      <h2 className="text-3xl md:text-4xl font-semibold text-center text-emerald-700">
+      <h2 data-testid='YourDash' className="text-3xl md:text-4xl font-semibold text-center text-emerald-700">
         Your dashboard {user?.firstName}
       </h2>
-      <Button
+      <Button data-testid='dashBtn'
           onClick={goToGitHub} 
           variant='secondary' className='hover:opacity-80 hover:scale-110 transition'>
         Github
