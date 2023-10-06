@@ -33,8 +33,8 @@ export const SubscriptionButton = ({isPro}:
     <Button onClick={onClick} disabled={loading}
         variant={isPro? 'premium' : 'pro'}>
         <p className="w-[100px]">
-        See Your Plan
-            {/* {isPro? 'See your Plan ' : 'Subscribe'} */}
+        
+            {isPro? 'See your Plan ' : 'Subscribe'}
         </p>
        
     </Button>
