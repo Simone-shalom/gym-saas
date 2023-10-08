@@ -16,12 +16,19 @@
 ### - AI- OpenAi
 ###- Subscriptions - Stripe
 
-### Virtual Trainer
-<img width="795" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/c20b3d2f-f297-46d4-b5b3-fe6a0c7366d9">
+
+
+### User Dashboard
+<img width="1252" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/15326eda-9b6d-4498-bf41-b1c25219906c">
+
+
+### Virtual Trainer Chat
+<img width="1254" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/f4164a33-79e2-4fa1-a8a4-88c6bcd52606">
 
 
 ### QR Code generation based on userId
-<img width="575" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/1621f638-5387-42f2-b1da-02577ee84ab5">
+<img width="1235" alt="image" src="https://github.com/Simone-shalom/gym-saas/assets/117103936/81163ea3-4c99-4de6-b9ec-b1eb28932aa9">
+
 
 
 ### Subscriptions using Stripe
@@ -41,11 +48,7 @@
 
 ## ACCESS:
 ### Email address- admin@gmail.com
-### Password - admin1234
-### Stripe test mode : 
-  credit card-4242 4242 4242 4242
-  month -2/24  cvc -424
-  name -admin
+### Password - admin1234 
 
 ## ABOUT: 
 Sass project for gym companies using latest techonologies. Handles authentication, user subscription, data.
