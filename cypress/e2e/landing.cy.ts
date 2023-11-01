@@ -3,7 +3,7 @@
 describe("Landing Page", () => {
     beforeEach(() => {
       // Visit the Landing page
-      cy.visit(""); // Replace with the actual URL where your LandingPage component is located
+        cy.signIn();
     });
   
     it("should load the Landing page", () => {

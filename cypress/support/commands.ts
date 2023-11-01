@@ -35,3 +35,36 @@
 //     }
 //   }
 // }
+
+declare namespace Cypress {
+    interface Chainable<Subject = any> {
+      signIn: () => void;
+    }
+  }
+  
+  Cypress.Commands.add('signIn', () => {
+    cy.log('Signing in.');
+    cy.visit('/');
+  
+    cy.window().should((window) => {
+      expect(window).to.have.property('Clerk');
+      expect((window as any).Clerk.isReady()).to.eq(true);
+    });
+  
+    cy.window()
+      .then((window) => {
+        const win = window as typeof window & { Clerk: any };
+        cy.clearCookies({ domain: win.location.hostname });
+        return win.Clerk.client.signIn.create({
+          identifier: Cypress.env('test_email'),
+          password: Cypress.env('test_password'),
+        }).then((res: { createdSessionId: string }) => {
+          return win.Clerk.setActive({
+            session: res.createdSessionId,
+          });
+        });
+      })
+      .then(() => {
+        cy.log('Finished Signing in.');
+      });
+  });
